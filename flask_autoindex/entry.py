@@ -1,6 +1,4 @@
 from past.builtins import cmp
-from future import standard_library
-standard_library.install_hooks()
 # -*- coding: utf-8 -*-
 from datetime import datetime
 from fnmatch import fnmatch
@@ -8,8 +6,7 @@ from mimetypes import guess_type
 import functools
 import os
 import re
-from future.utils import with_metaclass
-from future.moves.urllib.parse import urljoin
+from urllib.parse import urljoin
 from flask import url_for, send_file
 from werkzeug import cached_property
 
@@ -51,7 +48,7 @@ class _EntryMeta(type):
         return ent
 
 
-class Entry(with_metaclass(_EntryMeta, object)):
+class Entry(object, metaclass = _EntryMeta):
     """This class wraps file or directory. It is an abstract class, but it
     returns a derived instance. You can make an instance such as::
 

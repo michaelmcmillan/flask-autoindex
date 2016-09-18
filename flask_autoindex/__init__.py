@@ -8,9 +8,6 @@
     :copyright: (c) 2010-2013 by Heungsub Lee.
     :license: BSD, see LICENSE for more details.
 """
-from __future__ import absolute_import
-from future.builtins import str
-from future.builtins import object
 import os
 import re
 
