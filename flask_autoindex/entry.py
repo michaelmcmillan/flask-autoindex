@@ -1,4 +1,3 @@
-from past.builtins import cmp
 # -*- coding: utf-8 -*-
 from datetime import datetime
 from fnmatch import fnmatch
@@ -10,6 +9,8 @@ from urllib.parse import urljoin
 from flask import url_for, send_file
 from werkzeug import cached_property
 
+def cmp(a, b):
+    return (a > b) - (a < b)
 
 Default = None
 
